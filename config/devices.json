@@ -1,0 +1,14 @@
+[
+  {
+    "name": "NAS",
+    "mac": "AA:BB:CC:DD:EE:FF"
+  },
+  {
+    "name": "Living Room PC",
+    "mac": "11:22:33:44:55:66"
+  },
+  {
+    "name": "Media Server",
+    "mac": "77:88:99:AA:BB:CC"
+  }
+]

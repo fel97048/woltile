@@ -1,0 +1,121 @@
+:root {
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --primary: #3b82f6;
+  --primary-dark: #2563eb;
+  --text: #111827;
+  --muted: #6b7280;
+  --success: #16a34a;
+  --danger: #dc2626;
+  --shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #eef2ff 0%, #f8fafc 100%);
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.app-header {
+  text-align: center;
+  padding: 2rem 1rem 0;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.subtitle {
+  margin: 0.5rem auto 0;
+  color: var(--muted);
+}
+
+main {
+  max-width: 1200px;
+  margin: 2rem auto 3rem;
+  padding: 0 1rem;
+}
+
+.device-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.device-card {
+  background: var(--card);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: var(--shadow);
+}
+
+.device-card:hover,
+.device-card:focus-visible {
+  transform: translateY(-4px);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.device-card h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  letter-spacing: -0.02em;
+}
+
+.toast {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  min-width: 260px;
+  max-width: calc(100vw - 2rem);
+  padding: 1rem 1.25rem;
+  border-radius: 0.85rem;
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.18);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 20;
+}
+
+.toast.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.toast.success {
+  background: var(--success);
+}
+
+.toast.error {
+  background: var(--danger);
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .device-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .device-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
